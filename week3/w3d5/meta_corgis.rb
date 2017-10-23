@@ -111,23 +111,10 @@ class MetaCorgiSnacks
 
   def method_missing(name, *args)
     # Your code goes here...
-    
-    2 => {
-      "bone" => {
-        "info" => "An old dirty bone",
-        "tastiness" => 2
-      },
-      "kibble" => {
-        "info" => "Kale clusters",
-        "tastiness" => 1
-      },
-      "treat" => {
-        "info" => "Bacon",
-        "tastiness" => 80
-      }
-    },
-    result = "Treat: #{info}: #{tastiness} "
-    tastiness > 30 ? "* #{result}" : result
+    name = name.to_s
+
+      result = "#{name}: #{info}: #{tastiness} "
+      args[:tastiness] > 30 ? "* #{result}" : result
   end
 
 
